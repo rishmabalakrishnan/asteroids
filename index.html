@@ -1,0 +1,121 @@
+<html>
+
+<title>Asteroids</title>
+
+<!-- JS -->
+<script src='scripts/jquery.min.js'></script>
+<script src='scripts/page.js'></script>
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="style/index.css">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<!-- HTML -->
+<body>
+  <div class='outer-container'>
+      <div class='game-window'>
+        
+        <!-- Main Menu -->
+        <!-- (landing page) -->
+        <div id="landing-page">
+          <div id = "landing-header">
+            <img src="src/asteroid.png" alt="">
+            Asteroids
+            <img src="src/asteroid.png" alt="">
+          </div>
+          <div>
+            <button id="play_game_btn" onclick="play_game()">Play game!</button>
+          </div>
+          <div>
+            <!-- need to implement setting_click()  -->
+            <button id="settings_btn" onclick="setting_click()">Settings</button>
+          </div>
+        </div>        
+        
+        <!-- Settings -->
+        <div id="settings">
+          <h2 id="settings-text"><strong>Settings</strong></h2>
+          <div id="volume-block">
+            <div id="volume-text"><strong>Volume: </strong></div>
+            <div id="volume-value">50</div>
+          </div>
+          
+          
+          <!-- slider -->
+          <div id="slider-div">
+            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          </div>
+          
+          <h2 id="difficulty-text"><strong>Difficulty</strong></h2>
+          <div id="difficulty-buttons">
+            <button id="easy" onclick="easy_selected()">Easy</button>
+            <button id="normal" onclick="normal_selected()">Normal</button>
+            <button id="hard" onclick="hard_selected()">Hard</button>
+          </div>
+          
+          <br>
+          <button id="settings-close" onclick="close_settings()">Close</button>
+        </div>
+        
+        <!-- Tutorial -->
+        <div id="tutorial">
+          <div id="tutorial-items">
+            <h1>How to play</h1>
+            <p><strong>Avoid</strong> <em>asteroids!</em></p>
+            <img src="src/asteroid.png" alt="">
+            <p><strong>Collect</strong> <em>shields</em>! <strong>Travel</strong> through <em>portals</em> to the next level!</p>
+            <img src="src/shield.gif" alt="">
+            <img src="src/port.gif" alt="">
+            <p><strong>Gain</strong> as many <em>points</em> as possible!</p>
+            <button id="start-button" onclick="show_splash()">Start</button>
+          </div>
+          
+        </div>
+
+        <div id="get-ready">
+          <div id="get-ready-content">
+            <p id="get-ready-text">Get ready!</p>
+            <img src="./src/arrowkeys.png" alt="">
+            <p>Use arrow keys to move!</p>
+          </div>
+        </div>
+
+        <!-- Scoreboard -->
+        <div id="game_right_section">
+          <div id="scoreword">
+              SCORE
+              <div id="score_num">0</div>
+          </div>
+          <div id="danger">DANGER
+          <div id="danger_num">20</div></div>
+          <div id="level">LEVEL
+          <div id="level_num">1</div></div>
+      </div>
+        
+        <!-- Actual Game -->
+        <div id="actual_game">
+          <div class="asteroidSection">
+              <div class="curAstroid"> </div>
+          </div>
+
+          <div id="rocket">
+            <img id="rocket-img" src="src/player/player.gif" alt="rocket">
+          </div>
+          <div id="shield">
+            <img src="src/shield.gif" alt="">
+          </div>
+          <div id="portal">
+            <img src="src/port.gif" alt="">
+          </div>
+        </div>
+        <div id="game_over">
+          <p>GAME OVER!</p>
+          <p>YOU HAVE TO FIX YOUR SPACESHIP</p>
+          <div id="final_score"></div>
+          <button id="start_over_button" onclick="start_over()">Start Over</button>
+        </div>    
+      </div> <!-- end game-window -->
+  </div> <!-- end outer-container -->
+</body>
+
+</html>
